@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Logo from "../components/Logo";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth, provider } from "../configuration/firebase-config";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -73,6 +74,9 @@ const SignUp = () => {
           >
             SignUp
           </Button>
+          <Link to={"/"}>
+            <Text textAlign={"center"}>Already have an account Login</Text>
+          </Link>
         </Box>
       </Flex>
     </Box>

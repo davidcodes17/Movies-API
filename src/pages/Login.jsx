@@ -5,6 +5,7 @@ import { Google } from "iconsax-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth, provider } from "../configuration/firebase-config";
 import { signInWithPopup } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -87,6 +88,7 @@ const Login = () => {
           >
             Login with Google
           </Button>
+          <Link to={"/signup"}><Text textAlign={"center"}>Don't have an account SignUp</Text></Link>
         </Box>
       </Flex>
     </Box>
