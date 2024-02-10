@@ -13,20 +13,15 @@ const SignUp = () => {
   const handleSignIn = async () => {
     try {
       const { email, password } = form;
-      await createUserWithEmailAndPassword(firebaseAuth, email, password);
-      localStorage.setItem("user", data.user.displayName);
-      window.location.replace("/home");
+      await createUserWithEmailAndPassword(firebaseAuth, email, password).then(
+        (data) => {
+          localStorage.setItem("user", data.user.email);
+          window.location.replace("/home");
+        }
+      );
     } catch (err) {
       console.log(err);
     }
-  };
-
-  const googleSignIn = () => {
-    signInWithPopup(firebaseAuth, provider).then((data) => {
-      console.log(data.user.email);
-      localStorage.setItem("user", data.user.displayName);
-      window.location.replace("/home");
-    });
   };
   return (
     <Box p={10} mt={{ lg: "50px", md: "10%", sm: "50%", base: "40%" }}>

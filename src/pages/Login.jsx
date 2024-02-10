@@ -17,7 +17,7 @@ const Login = () => {
       const { email, password } = form;
       await signInWithEmailAndPassword(firebaseAuth, email, password).then(
         (data) => {
-          localStorage.setItem("user", data.user.displayName);
+          localStorage.setItem("user", data.user.email);
           window.location.replace("/home");
         }
       );
