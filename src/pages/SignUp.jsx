@@ -1,12 +1,10 @@
 import { Box, Button, Flex, FormLabel, Input, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Logo from "../components/Logo";
-import { Google } from "iconsax-react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { firebaseAuth, provider } from "../configuration/firebase-config";
-import { signInWithPopup } from "firebase/auth";
 
-const Login = () => {
+const SignUp = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -14,12 +12,9 @@ const Login = () => {
   const handleSignIn = async () => {
     try {
       const { email, password } = form;
-      await signInWithEmailAndPassword(firebaseAuth, email, password).then(
-        (data) => {
-          localStorage.setItem("user", data.user.displayName);
-          window.location.replace("/home");
-        }
-      );
+      await createUserWithEmailAndPassword(firebaseAuth, email, password);
+      localStorage.setItem("user", data.user.displayName);
+      window.location.replace("/home");
     } catch (err) {
       console.log(err);
     }
@@ -39,7 +34,7 @@ const Login = () => {
           <Logo />
           <Text fontSize={"30px"}>Welcome User👋</Text>
           <Text fontSize={12} pb={5}>
-            Please login in to your netflix account...
+            Please SignUp in to your netflix account...
           </Text>
           <Box>
             <FormLabel>Email</FormLabel>
@@ -76,16 +71,7 @@ const Login = () => {
             _hover={"none"}
             width={"100%"}
           >
-            Login
-          </Button>
-          <Button
-            leftIcon={<Google color="#E50914" variant="Bold" />}
-            color={"#E50914"}
-            my={5}
-            onClick={googleSignIn}
-            width={"100%"}
-          >
-            Login with Google
+            SignUp
           </Button>
         </Box>
       </Flex>
@@ -93,4 +79,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

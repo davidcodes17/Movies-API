@@ -12,11 +12,14 @@ const Footer = () => {
             <Image width={"50%"} src="/logo.png" />
           </Flex>
           <Flex gap={5} py={5} justifyContent={'center'}>
-            <Link to={"/login"}>
+            <Link to={"/"}>
             <Button
               height={"30px"}
               fontSize={12}
               _hover={"none"}
+              onClick={()=>{
+                localStorage.clear();
+              }}
               border={"2px solid #fff"}
               bg={"none"}
               color={"#fff"}

@@ -19,10 +19,10 @@ const Home = () => {
         <Hero />
       </Box>
       <Box p={{lg : 10,md : 10, sm : 5, base : 5}}>
-        <NewlyAdded text={"Newly Added"} />
+        <NewlyAdded text={"Newly Added"} s={"Action"} />
       </Box>
       <Box p={{lg : 10,md : 10, sm : 5, base : 5}}>
-        <NewlyAdded text={"Movies"} />
+        <NewlyAdded text={"Movies"} s={"Comedy"} />
           <Footer />
       </Box>
     </Box>

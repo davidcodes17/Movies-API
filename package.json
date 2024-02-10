@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "axios": "^1.6.7",
+    "firebase": "^10.8.0",
     "framer-motion": "^10.16.12",
     "iconsax-react": "^0.0.8",
     "react": "^18.2.0",

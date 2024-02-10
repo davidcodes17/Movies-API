@@ -5,7 +5,7 @@ import React from "react";
 const PlayBtnCompo = () => {
   return (
     <Box>
-        <Text fontSize={{lg : 35, md : 35, sm : 25, base : 30}}>Where Entertainment <br /> Never Ends📽️🎞️🍿🎥</Text>
+        <Text fontSize={{lg : 35, md : 35, sm : "40px", base : "30px"}}>Where Entertainment <br /> Never Ends📽️🎞️🍿🎥</Text>
       <Flex alignItems={"center"} gap={5}>
         <Play size={80} variant="Bulk" color="#E50914" />
         <Text fontSize={{lg : 45, md : 35, sm : 25, base : 20}}>Watch Anywhere</Text>
